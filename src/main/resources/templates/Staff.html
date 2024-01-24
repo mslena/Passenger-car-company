@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Пассажирское автопредприятие</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="table.css" />
+  <link rel="stylesheet" href="navigation.css" />
+</head>
+<body class="body">
+<header>
+  <nav th:insert="~{navigation::nav}"/>
+</header>
+
+<div class="container">
+  <h2 style="text-align: center">Персонал</h2>
+  <table id="passengerTable" class="table">
+    <thead>
+    <tr>
+      <th>Уникальный номер сотрудника</th>
+      <th>ФИО</th>
+      <th>Номер телефона</th>
+      <th>Адрес</th>
+      <th>Дата рождения</th>
+      <th>Паспортные данные</th>
+      <th>Номер трудовой книжки</th>
+    </tr>
+    </thead>
+    <tbody th:each = "Staff : ${Staff}">
+    <tr>
+      <td th:text = "${Staff.id_staff}"></td>
+      <td th:text = "${Staff.full_name}"></td>
+      <td th:text = "${Staff.phone_number}"></td>
+      <td th:text = "${Staff.address}"></td>
+      <td th:text = "${Staff.date_of_birth}"></td>
+      <td th:text = "${Staff.passport_details}"></td>
+      <td th:text = "${Staff.work_book_number}"></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+<div class="block">
+  <a class="add" href="addStaff">Добавить сотрудника</a><a class="add" href="updateStaff">Изменить данные</a><a class="add" href="deleteStaff">Удалить данные</a>
+</div>
+
+</body>
+</html>

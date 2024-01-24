@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика</title>
+    <link rel="stylesheet" href="request.css" />
+    <link rel="stylesheet" href="navigation.css" />
+</head>
+<body class="flex">
+<header>
+    <nav th:insert="~{nav::navig}"/>
+</header>
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="date_g">Дата:</label>
+            <input type="date" id="date_g" name="date_g">
+        </div>
+        <input type="submit" value="Вывести результаты"/>
+    </form>
+
+</div>
+
+<div class="route-list" th:each = " requestOne : ${requestOne}">
+    <h2>Количество автобусов, обслуживающие маршрут</h2>
+    <div class="order">
+        <div class="order-info">
+            <p><strong>Уникальный номер маршрута:</strong><p th:text = "${requestOne.id_route}" ></p></p>
+            <p><strong>Дата:</strong><p th:text = "${requestOne.date_g}" ></p></p>
+            <p><strong>Количество автобусов, обслуживающие маршрут:</strong><p th:text = "${requestOne.count}" ></p></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

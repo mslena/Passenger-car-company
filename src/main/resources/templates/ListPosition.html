@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Пассажирское автопредприятие</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="table.css" />
+  <link rel="stylesheet" href="navigation.css" />
+</head>
+<body class="body">
+<header>
+  <nav th:insert="~{navigation::nav}"/>
+</header>
+
+<div class="container">
+  <h2 style="text-align: center">Список должностей</h2>
+  <table id="Table" class="table">
+    <thead>
+    <tr>
+      <th>Уникальный номер сотрудника</th>
+      <th>Уникальный номер должности</th>
+      <th>Стаж работы</th>
+      <th>Оплата труда</th>
+    </tr>
+    </thead>
+    <tbody th:each = "ListPosition : ${ListPosition}">
+    <tr>
+      <td th:text = "${ListPosition.id_staff}"></td>
+      <td th:text = "${ListPosition.id_post}"></td>
+      <td th:text = "${ListPosition.work_experience}"></td>
+      <td th:text = "${ListPosition.salary}"></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+<div class="block">
+  <a class="add" href="addListPosition">Добавить данные</a><a class="add" href="updateListPosition">Изменить данные</a><a class="add" href="deleteListPosition">Удалить данные</a>
+</div>
+
+</body>
+</html>

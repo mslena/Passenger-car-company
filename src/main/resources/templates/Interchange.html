@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Пассажирское автопредприятие</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="table.css" />
+  <link rel="stylesheet" href="navigation.css" />
+</head>
+<body class="body">
+<header>
+  <nav th:insert="~{navigation::nav}"/>
+</header>
+
+<div class="container">
+  <h2 style="text-align: center">Смены</h2>
+  <table id="Table" class="table">
+    <thead>
+    <tr>
+      <th>Уникальный номер смены</th>
+      <th>Уникальный номер маршрута</th>
+      <th>Уникальный номер водителя</th>
+      <th>Уникальный номер кондуктора</th>
+    </tr>
+    </thead>
+    <tbody th:each = "Interchange : ${Interchange}">
+    <tr>
+      <td th:text = "${Interchange.id_interchange}"></td>
+      <td th:text = "${Interchange.id_route_sheet}"></td>
+      <td th:text = "${Interchange.id_driver}"></td>
+      <td th:text = "${Interchange.id_conductor}"></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+<div class="block">
+  <a class="add" href="addInterchange">Добавить смену</a><a class="add" href="updateInterchange">Изменить данные</a><a class="add" href="deleteInterchange">Удалить данные</a>
+</div>
+
+</body>
+</html>

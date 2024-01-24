@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Пассажирское автопредприятие</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="table.css" />
+    <link rel="stylesheet" href="navigation.css" />
+</head>
+<body class="body">
+<header>
+    <nav th:insert="~{navigation::nav}"/>
+</header>
+
+<div class="container">
+    <h2 style="text-align: center">Автобусы</h2>
+    <table id="passengerTable" class="table">
+        <thead>
+        <tr>
+            <th>Уникальный номер автобуса</th>
+            <th>Марка</th>
+            <th>Бортовой номер</th>
+            <th>Государственный номер</th>
+        </tr>
+        </thead>
+        <tbody th:each = "Bus : ${Bus}">
+        <tr>
+            <td th:text = "${Bus.id_bus}"></td>
+            <td th:text = "${Bus.brand}"></td>
+            <td th:text = "${Bus.tail_number}"></td>
+            <td th:text = "${Bus.state_number}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div class="block">
+    <a class="add" href="addBus">Добавить автобус</a><a class="add" href="updateBus">Изменить данные</a><a class="add" href="deleteBus">Удалить данные</a>
+</div>
+
+</body>
+</html>

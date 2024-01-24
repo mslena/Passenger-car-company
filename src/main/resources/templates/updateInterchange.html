@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пассажирское Автопредприятие</title>
+    <link rel="stylesheet" href="update.css" />
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center">Редактирование данных</h2>
+
+    <form>
+        <form id="busForm">
+            <div class="form-group">
+                <label for="id_interchange">Уникальный номер смены</label>
+                <select id="id_interchange" name="id_interchange">
+                    <div th:each = "Interchange : ${Interchange}">
+                        <option th:text = "${Interchange.id_interchange}"></option>
+                    </div>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id_driver">Уникальный номер водителя</label>
+                <select id="id_driver" name="id_driver">
+                    <option style="display:none"> </option>
+                    <div th:each = "Staff : ${Staff}">
+                        <option th:text = "${Staff.id_staff}"></option>
+                    </div>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id_conductor">Уникальный номер кондуктора</label>
+                <select id="id_conductor" name="id_conductor">
+                    <option style="display:none"> </option>
+                    <div th:each = "Staff : ${Staff}">
+                        <option th:text = "${Staff.id_staff}"></option>
+                    </div>
+                </select>
+            </div>
+        <div class="form-group">
+            <label for="id_route_sheet">Уникальный номер маршрутного листа</label>
+            <select id="id_route_sheet" name="id_route_sheet">
+                <option style="display:none"> </option>
+                <div th:each = "RouteSheet : ${RouteSheet}">
+                    <option th:text = "${RouteSheet.id_route_sheet}"></option>
+                </div>
+            </select>
+        </div>
+        <input type="submit"/>
+    </form>
+
+    <p>*Заполните только те поля, которые вы хотите изменить</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Пассажирское Автопредприятие</title>
+        <link rel="stylesheet" href="update.css" />
+    </head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center">Удаление данных</h2>
+
+    <form>
+        <div class="form-group">
+           <label for="id_staff">Уникальный номер сотрудника</label>
+            <select id="id_staff" name="id_staff">
+                <div th:each = "Staff : ${Staff}">
+                    <option th:text = "${Staff.id_staff}"></option>
+                </div>
+            </select>
+        </div>
+        <input type="submit"/>
+    </form>
+
+</div>
+</body>
+</html>

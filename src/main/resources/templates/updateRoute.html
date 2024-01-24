@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Пассажирское Автопредприятие</title>
+  <link rel="stylesheet" href="update.css" />
+</head>
+<body>
+
+<div class="container">
+  <h2 style="text-align: center">Редактирование данных</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="id_route">Уникальный номер маршрута</label>
+      <select id="id_route" name="id_route">
+        <div th:each = "Route : ${Route}">
+          <option th:text = "${Route.id_route}"></option>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="start_route">Начало маршрута:</label>
+      <input type="text" id="start_route" name="start_route">
+    </div>
+    <div class="form-group">
+      <label for="end_route">Конец маршрута:</label>
+      <input type="text" id="end_route" name="end_route">
+    </div>
+    <div class="form-group">
+      <label for="dispatch_time">Время отправки:</label>
+      <input type="text" id="dispatch_time" name="dispatch_time">
+    </div>
+    <div class="form-group">
+      <label for="arrival_time">Время прибытия:</label>
+      <input type="text" id="arrival_time" name="arrival_time">
+    </div>
+    <input type="submit"/>
+  </form>
+
+  <p>*Заполните только те поля, которые вы хотите изменить</p>
+</div>
+
+</body>
+</html>

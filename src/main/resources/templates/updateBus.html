@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пассажирское Автопредприятие</title>
+    <link rel="stylesheet" href="update.css" />
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center">Редактирование данных</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="id_bus">Уникальный номер автобуса</label>
+            <select id="id_bus" name="id_bus">
+                <div th:each = "Bus : ${Bus}">
+                    <option th:text = "${Bus.id_bus}"></option>
+                </div>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="brand">Марка:</label>
+            <input type="text" id="brand" name="brand">
+        </div>
+        <div class="form-group">
+            <label for="state_number">Гос номер:</label>
+            <input type="text" id="state_number" name="state_number">
+        </div>
+        <div class="form-group">
+            <label for="tail_number">Бортовой номер:</label>
+            <input type="number" id="tail_number" name="tail_number">
+        </div>
+        <input type="submit"/>
+    </form>
+
+    <p>*Заполните только те поля, которые вы хотите изменить</p>
+</div>
+
+</body>
+</html>

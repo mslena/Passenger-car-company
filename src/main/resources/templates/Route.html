@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Пассажирское автопредприятие</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="table.css" />
+    <link rel="stylesheet" href="navigation.css" />
+</head>
+<body class="body">
+<header>
+    <nav th:insert="~{navigation::nav}"/>
+</header>
+
+<div class="container">
+    <h2 style="text-align: center">Маршруты</h2>
+    <table id="Table" class="table">
+        <thead>
+        <tr>
+            <th>Уникальный номер маршрута</th>
+            <th>Начало маршрута</th>
+            <th>Конец маршрута</th>
+            <th>Время отправления</th>
+            <th>Время прибытия</th>
+        </tr>
+        </thead>
+        <tbody th:each = "Route : ${Route}">
+        <tr>
+            <td th:text = "${Route.id_route}"></td>
+            <td th:text = "${Route.start_route}"></td>
+            <td th:text = "${Route.end_route}"></td>
+            <td th:text = "${Route.dispatch_time}"></td>
+            <td th:text = "${Route.arrival_time}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div class="block">
+    <a class="add" href="addRoute">Добавить маршрут</a><a class="add" href="updateRoute">Изменить данные</a><a class="add" href="deleteRoute">Удалить данные</a>
+</div>
+
+</body>
+</html>

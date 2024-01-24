@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Маршрутный лист для водителя</title>
+  <link rel="stylesheet" href="request.css" />
+  <link rel="stylesheet" href="navigation.css" />
+</head>
+<body class="flex">
+<header>
+  <nav th:insert="~{nav::navig}"/>
+</header>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="id_interchange">Уникальный номер водителя</label>
+      <select id="id_interchange" name="id_interchange">
+        <div th:each = "Interchange : ${Interchange}">
+          <option th:text = "${Interchange.id_interchange}"></option>
+        </div>
+      </select>
+    </div>
+    <input type="submit" value="Вывести результаты"/>
+  </form>
+
+</div>
+
+<div class="route-list" th:each = " Waybill : ${Waybill}">
+  <h2>Маршрутный лист для водителя</h2>
+
+  <div class="order">
+    <div class="order-info">
+      <p><strong>Уникальный номер смены:</strong><p th:text = "${Waybill.id_interchange}" ></p></p>
+      <p><strong>Начало маршрута:</strong><p th:text = "${Waybill.start_route}" ></p></p>
+      <p><strong>Конец маршрута:</strong><p th:text = "${Waybill.end_route}" ></p></p>
+      <p><strong>Дата поездки:</strong><p th:text = "${Waybill.date_g}" ></p></p>
+      <p><strong>Время отправки:</strong><p th:text = "${Waybill.dispath_time}" ></p></p>
+      <p><strong>Время прибытия:</strong><p th:text = "${Waybill.arrival_time}" ></p></p>
+      <p><strong>Марка автобуса:</strong><p th:text = "${Waybill.brand}" ></p></p>
+      <p><strong>Бортовой номер:</strong><p th:text = "${Waybill.tail_number}" ></p></p>
+      <p><strong>Гос номер:</strong><p th:text = "${Waybill.state_number}" ></p></p>
+      <p><strong>ФИО водителя:</strong><p th:text = "${Waybill.full_name_driver}" ></p></p>
+      <p><strong>Номер телефона водителя:</strong><p th:text = "${Waybill.phone_number_driver}" ></p></p>
+      <p><strong>ФИО кондуктора:</strong><p th:text = "${Waybill.full_name_conductor}" ></p></p>
+      <p><strong>Номер телефона кондуктора:</strong><p th:text = "${Waybill.phone_number_conductor}" ></p></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

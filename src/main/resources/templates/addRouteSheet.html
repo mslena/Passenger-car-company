@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Пассажирское автопредприятие</title>
+  <link rel="stylesheet" href="add.css" />
+</head>
+<body>
+
+<div class="container">
+  <h2 style="text-align: center">Добавление маршрутного листа</h2>
+
+  <form id="busForm">
+    <div class="form-group">
+      <label for="id_route">Уникальный номер маршрута</label>
+      <select id="id_route" name="id_route">
+        <div th:each = "Route : ${Route}">
+          <option th:text = "${Route.id_route}"></option>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="id_bus">Уникальный номер автобуса</label>
+      <select id="id_bus" name="id_bus">
+        <div th:each = "Bus : ${Bus}">
+          <option th:text = "${Bus.id_bus}"></option>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="date">Дата:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+    <input type="submit"/>
+  </form>
+</div>
+
+
+</body>
+</html>

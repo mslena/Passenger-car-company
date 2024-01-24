@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика</title>
+    <link rel="stylesheet" href="request.css" />
+    <link rel="stylesheet" href="navigation.css" />
+    <script src="update.js"></script>
+</head>
+<body>
+<header>
+    <nav th:insert="~{nav::navig}"/>
+</header>
+<div class="flex">
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="start_month">Введите начальный номер месяца:</label>
+                <input type="text" id="start_month" name="start_month">
+            </div>
+            <div class="form-group">
+                <label for="end_month">Введите конечный номер месяца:</label>
+                <input type="text" id="end_month" name="end_month">
+            </div>
+            <div class="form-group">
+                <label for="year">Введите год:</label>
+                <input type="text" id="year" name="year">
+            </div>
+            <button type="submit">Вывести результаты</button>
+
+        </form>
+    </div>
+</div>
+<div class="box">
+    <h3 class="inline" th:text="${start_month}"></h3><h3  class="inline">-</h3><h3  class="inline" th:text="${end_month}"></h3><h3  class="inline" th:text="${year}"></h3>
+</div>
+
+<div class="flex">
+    <div class="route-list">
+        <h2>Водители</h2>
+        <div class="order" th:each = " requestFour : ${requestFour}">
+            <div class="order-info">
+                <p><strong>Уникальный номер водителя:</strong><p th:text = "${requestFour.id_driver}"></p>
+                <p><strong>ФИО:</strong><p th:text = "${requestFour.full_name_driver}" ></p>
+                <p><strong>Количество отработанных смен:</strong><p th:text = "${requestFour.count_driver}" ></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="route-list">
+        <h2>Кондукторы</h2>
+        <div class="order" th:each = " requestFour : ${requestFour}">
+            <div class="order-info">
+                <p><strong>Уникальный номер кондуктора:</strong><p th:text = "${requestFour.id_conductor}"></p>
+                <p><strong>ФИО:</strong><p th:text = "${requestFour.full_name_conductor}" ></p>
+                <p><strong>Количество отработанных смен:</strong><p th:text = "${requestFour.count_conductor}" ></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

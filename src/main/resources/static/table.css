@@ -1,0 +1,54 @@
+.body {
+    background-color: #f8f9fa;
+    padding: 5px;
+}
+.block{
+    padding: 10px;
+    max-width: 100%;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+.add{
+    display: inline-block;
+    margin: 25px;
+    padding: 15px 15px 15px 20px;
+    width: 200px;
+    background-color:#007bff;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 17px;
+}
+
+.add:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.container {
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+

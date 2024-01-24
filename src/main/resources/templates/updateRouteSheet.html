@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Пассажирское Автопредприятие</title>
+  <link rel="stylesheet" href="update.css" />
+</head>
+<body>
+
+<div class="container">
+  <h2 style="text-align: center">Редактирование данных</h2>
+
+  <form>
+
+    <div class="form-group">
+    <label for="id_route_sheet">Уникальный номер маршрутного листа</label>
+    <select id="id_route_sheet" name="id_route_sheet">
+      <div th:each = "RouteSheet : ${RouteSheet}">
+        <option th:text = "${RouteSheet.id_route_sheet}"></option>
+      </div>
+    </select>
+  </div>
+    <div class="form-group">
+      <label for="id_route">Уникальный номер маршрута</label>
+      <select id="id_route" name="id_route">
+        <option style="display:none"> </option>
+        <div th:each = "Route : ${Route}">
+          <option th:text = "${Route.id_route}"></option>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="id_bus">Уникальный номер автобуса</label>
+      <select id="id_bus" name="id_bus">
+        <option style="display:none"> </option>
+        <div th:each = "Bus : ${Bus}">
+          <option th:text = "${Bus.id_bus}"></option>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="date">Дата:</label>
+      <input type="date" id="date" name="date">
+    </div>
+    <input type="submit"/>
+  </form>
+
+  <p>*Заполните только те поля, которые вы хотите изменить</p>
+</div>
+
+</body>
+</html>

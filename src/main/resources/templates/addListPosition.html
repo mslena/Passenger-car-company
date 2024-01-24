@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Пассажирское автопредприятие</title>
+  <link rel="stylesheet" href="add.css" />
+</head>
+<body>
+
+<div class="container">
+  <h2 style="text-align: center">Добавление должности</h2>
+
+  <form id="busForm">
+    <div class="form-group">
+      <label for="id_staff">Уникальный номер сотрудника</label>
+      <select id="id_staff" name="id_staff">
+        <div th:each = "Staff : ${Staff}">
+          <option th:text = "${Staff.id_staff}"></option>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="id_post">Уникальный номер должности</label>
+      <select id="id_post" name="id_post">
+        <div th:each = "Post : ${Post}">
+          <option th:text = "${Post.id_post}"></option>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="work_experience">Стаж работы:</label>
+      <input type="text" id="work_experience" name="work_experience" required>
+    </div>
+    <div class="form-group">
+      <label for="salary">Оплата труда:</label>
+      <input type="text" id="salary" name="salary" required>
+    </div>
+    <input type="submit"/>
+  </form>
+</div>
+
+
+</body>
+</html>

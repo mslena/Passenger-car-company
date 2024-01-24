@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Пассажирское автопредприятие</title>
+  <link rel="stylesheet" href="add.css" />
+</head>
+<body>
+
+<div class="container">
+  <h2 style="text-align: center">Добавление смены</h2>
+
+  <form id="busForm">
+    <div class="form-group">
+      <label for="id_driver">Уникальный номер водителя</label>
+      <select id="id_driver" name="id_driver">
+        <div th:each = "Staff : ${Staff}">
+          <option th:text = "${Staff.id_staff}"></option>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="id_conductor">Уникальный номер кондуктора</label>
+      <select id="id_conductor" name="id_conductor">
+        <div th:each = "Staff : ${Staff}">
+          <option th:text = "${Staff.id_staff}"></option>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="id_route_sheet">Уникальный номер маршрутного листа</label>
+      <select id="id_route_sheet" name="id_route_sheet">
+        <div th:each = "RouteSheet : ${RouteSheet}">
+          <option th:text = "${RouteSheet.id_route_sheet}"></option>
+        </div>
+      </select>
+    </div>
+    <input type="submit"/>
+  </form>
+</div>
+
+
+</body>
+</html>

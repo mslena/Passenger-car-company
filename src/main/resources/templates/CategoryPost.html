@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Пассажирское автопредприятие</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="table.css" />
+    <link rel="stylesheet" href="navigation.css" />
+</head>
+<body class="body">
+<header>
+    <nav th:insert="~{navigation::nav}"/>
+</header>
+
+<div class="container">
+    <h2 style="text-align: center">Категории должностей</h2>
+    <table id="passengerTable" class="table">
+        <thead>
+        <tr>
+            <th>Уникальный номер категории должности</th>
+            <th>Категория должности</th>
+        </tr>
+        </thead>
+        <tbody th:each = "CategoryPost : ${CategoryPost}">
+        <tr>
+            <td th:text = "${CategoryPost.id_category_post}"></td>
+            <td th:text = "${CategoryPost.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div class="block">
+    <a class="add" href="addCategoryPost">Добавить должность</a><a class="add" href="updateCategoryPost">Изменить данные</a><a class="add" href="deleteCategoryPost">Удалить данные</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пассажирское Автопредприятие</title>
+    <link rel="stylesheet" href="update.css" />
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center">Редактирование данных</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="id_post">Уникальный номер должности</label>
+            <select id="id_post" name="id_post">
+                <div th:each = "Post : ${Post}">
+                    <option th:text = "${Post.id_post}"></option>
+                </div>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="name">Наименование:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="id_category_post">Уникальный номер котегории должностей:</label>
+            <input type="text" id="id_category_post" name="id_category_post">
+        </div>
+
+        <input type="submit"/>
+    </form>
+
+    <p>*Заполните только те поля, которые вы хотите изменить</p>
+</div>
+
+</body>
+</html>

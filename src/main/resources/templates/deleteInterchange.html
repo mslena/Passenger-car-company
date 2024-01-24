@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>Пассажирское Автопредприятие</title>
+    <link rel="stylesheet" href="update.css" />
+  </head>
+<body>
+
+<div class="container">
+  <h2 style="text-align: center">Удаление данных</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="id_interchange">Уникальный номер смены</label>
+      <select id="id_interchange" name="id_interchange">
+        <div th:each = "Interchange : ${Interchange}">
+          <option th:text = "${Interchange.id_interchange}"></option>
+        </div>
+      </select>
+    </div>
+    <input type="submit"/>
+  </form>
+
+</div>
+
+</body>
+</html>

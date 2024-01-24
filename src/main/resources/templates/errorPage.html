@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Page</title>
+  <link rel="stylesheet" href="error.css" />
+</head>
+<body>
+<div class="error-container">
+  <h1>ОШИБКА</h1>
+  <p>Обнаружена ошибка введенных данных!</p>
+  <p th:text="${error}"></p>
+  <p>Вернуться на <a href="/home">главную страницу</a></p>
+</div>
+</body>
+</html>
