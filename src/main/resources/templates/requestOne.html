@@ -23,8 +23,9 @@
 
 </div>
 
+<h2>Количество автобусов, обслуживающие маршрут</h2>
 <div class="route-list" th:each = " requestOne : ${requestOne}">
-    <h2>Количество автобусов, обслуживающие маршрут</h2>
+
     <div class="order">
         <div class="order-info">
             <p><strong>Уникальный номер маршрута:</strong><p th:text = "${requestOne.id_route}" ></p></p>

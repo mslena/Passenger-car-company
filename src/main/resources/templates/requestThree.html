@@ -32,8 +32,8 @@
 </div>
 <h2 th:text="${month}"></h2>
 <div id="busForm" class="hidden">
+    <h2>Количество рейсов, выполненных каждым автобусом</h2>
 <div class="route-list" th:each = " requestThreeBus : ${requestThreeBus}">
-    <h2>Количество автобусов, выполненных каждым автобусом за меясц</h2>
     <div class="order">
         <div class="order-info">
             <p><strong>Уникальный номер автобуса:</strong><p th:text = "${requestThreeBus.id_bus}"></p>
@@ -46,8 +46,9 @@
 </div>
 </div>
 <div id="routeForm" class="hidden">
+    <h2>Количество рейсов, выполненных на каждом маршруте</h2>
 <div class="route-list" th:each = " requestThreeRoute : ${requestThreeRoute}">
-    <h2>Количество рейсов, выполненных на каждом маршруте за месяц</h2>
+
     <div class="order">
         <div class="order-info">
             <p><strong>Уникальный номер маршрута:</strong><p th:text = "${requestThreeRoute.id_route}" ></p>
