@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="navigation.css" />
     <script src="update.js"></script>
 </head>
-<body>
+<body  class="flex">
 <header>
     <nav th:insert="~{nav::navig}"/>
 </header>
-<div class="flex">
+<p>Итоги работы за полугодие.Количество смен, отработанных каждым водителем и кондуктором.</p>
+
     <div class="container">
         <form>
             <div class="form-group">
@@ -30,13 +31,13 @@
             <button type="submit">Вывести результаты</button>
 
         </form>
-    </div>
+
 </div>
 <div class="box">
     <h3 class="inline" th:text="${start_month}"></h3><h3  class="inline">-</h3><h3  class="inline" th:text="${end_month}"></h3><h3  class="inline" th:text="${year}"></h3>
 </div>
 
-<div class="flex">
+
     <div class="route-list">
         <h2>Водители</h2>
         <div class="order" th:each = " requestFour : ${requestFour}">
@@ -59,7 +60,7 @@
         </div>
     </div>
 
-</div>
+
 
 </body>
 </html>

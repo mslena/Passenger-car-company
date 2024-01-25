@@ -21,23 +21,23 @@ public class StaffService {
     }
 
     public void update(String id_staff, String full_name, String date_of_birth, String phone_number, String address, String passport_details, String work_book_number){
-        if(full_name == ""){
+        if(!full_name.isEmpty()){
             staffDAO.updateFullName(Integer.parseInt(id_staff), full_name);
         }
-        if(date_of_birth == ""){
+        if(!date_of_birth.isEmpty()){
             staffDAO.updateDateOfBirth(Integer.parseInt(id_staff), date_of_birth);
         }
-        if(phone_number == ""){
+        if(!phone_number.isEmpty()){
             staffDAO.updatePhoneNumber(Integer.parseInt(id_staff), phone_number);
         }
-        if(address == ""){
+        if(!address.isEmpty()){
             staffDAO.updateAddress(Integer.parseInt(id_staff), address);
         }
-        if(passport_details == ""){
+        if(!passport_details.isEmpty()){
             staffDAO.updatePassportDetails(Integer.parseInt(id_staff), passport_details);
 
         }
-        if(work_book_number == ""){
+        if(!work_book_number.isEmpty()){
             staffDAO.updateWorkBookNumber(Integer.parseInt(id_staff) ,work_book_number);
         }
     }
